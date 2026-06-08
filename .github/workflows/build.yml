@@ -18,7 +18,7 @@ jobs:
         run: npx cap sync android
       - uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
