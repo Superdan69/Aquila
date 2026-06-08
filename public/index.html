@@ -85,16 +85,19 @@
         const hostSelect = document.getElementById('host-voice');
         const guest1Select = document.getElementById('guest1-voice');
         const guest2Select = document.getElementById('guest2-voice');
+        
         availableVoices.forEach(voice => {
             const optionHTML = <option value=""> - </option>;
             hostSelect.insertAdjacentHTML('beforeend', optionHTML);
             guest1Select.insertAdjacentHTML('beforeend', optionHTML);
             guest2Select.insertAdjacentHTML('beforeend', optionHTML);
         });
+
         guest1Select.insertAdjacentHTML('afterbegin', '<option value="none">-- No Guest --</option>');
         guest2Select.insertAdjacentHTML('afterbegin', '<option value="none">-- No Guest --</option>');
         guest1Select.value = 'none';
         guest2Select.value = 'none';
+
         document.getElementById('start-session').addEventListener('click', () => {
             const sessionData = {
                 instructions: document.getElementById('instructions').value,
@@ -106,6 +109,7 @@
             localStorage.setItem('studioSession', JSON.stringify(sessionData));
             alert('Session settings saved!');
         });
+
         const toggleLinesBtn = document.getElementById('toggle-lines');
         let linesOpen = false;
         toggleLinesBtn.addEventListener('click', () => {
